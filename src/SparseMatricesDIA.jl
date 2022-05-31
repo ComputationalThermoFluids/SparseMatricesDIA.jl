@@ -1,5 +1,13 @@
 module SparseMatricesDIA
 
-# Write your package code here.
+using SparseArrays
+using LinearAlgebra
+
+import Base: size, *
+import LinearAlgebra: mul!
+
+export SparseMatrixDIA
+
+include("SparseMatrixDIA.jl")
 
 end
