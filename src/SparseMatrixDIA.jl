@@ -54,7 +54,7 @@ end
 #ndiag(A::SparseMatrixDIA) = size(values(A), 2)
 
 function *(A::SparseMatrixDIA{S}, x::AbstractVector{T}) where {S,T}
-    y = zeros(promote_type(S, T), size(x))
+    y = similar(x, promote_type(S, T), size(A, 1))#, size(x))
     mul!(y, A, x)
     y
 end
@@ -71,6 +71,8 @@ See also
 function mul!(y::AbstractVector, A::SparseMatrixDIA, x::AbstractVector)
     vals = values(A)
     dist = distance(A)
+
+    y .= zero(eltype(y))
 
     n = size(vals, 1)
 
