@@ -56,6 +56,7 @@ end
 function *(A::SparseMatrixDIA{S}, x::AbstractVector{T}) where {S,T}
     y = zeros(promote_type(S, T), size(x))
     mul!(y, A, x)
+    y
 end
 
 """
@@ -78,8 +79,6 @@ function mul!(y::AbstractVector, A::SparseMatrixDIA, x::AbstractVector)
             y[j] += vals[j, ind] * x[j+d]
         end
     end
-
-    y
 end
 
 function *(A::Transpose{S,<:SparseMatrixDIA}, x::AbstractVector{T}) where {S,T}
@@ -98,8 +97,6 @@ function mul!(y::AbstractVector, A::Transpose{S,<:SparseMatrixDIA}, x::AbstractV
             y[j] += vals[j-d, ind] * x[j-d]
         end
     end
-
-    y
 end
 
 """

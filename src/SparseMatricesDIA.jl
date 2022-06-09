@@ -10,5 +10,6 @@ import SparseArrays: sparse
 export SparseMatrixDIA
 
 include("SparseMatrixDIA.jl")
+include("SymSparseMatrixDIA.jl")
 
 end
