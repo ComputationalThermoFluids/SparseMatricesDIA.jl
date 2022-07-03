@@ -1,7 +1,7 @@
 name = "SparseMatricesDIA"
 uuid = "65cbc299-c51b-4ebd-8341-ba82bff450e6"
 authors = ["Vincent Le Chenadec <vincentlechenadec@gmail.com> and contributors"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
